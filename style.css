@@ -49,3 +49,25 @@ button:hover {
   cursor: pointer;
 } */
 
+.wrapper {
+  max-width: 46rem;
+  margin: 0 auto;
+  /* padding: 0 1rem 5rem 1rem; */
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  /* align-items: center;
+  justify-content: center; */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  /* .wrapper {
+    grid-template-columns: 1fr;
+  } */
+}
