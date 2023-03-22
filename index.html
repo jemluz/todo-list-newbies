@@ -27,19 +27,19 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="header">
+      <header>
         <!-- ./ nivel atual -->
         <!-- ../ nivel anterior -->
         <img src="../assets/todo-log.svg" alt="" />
-      </div>
+      </header>
 
-      <div class="main">
+      <main>
         <form class="new_task_form">
           <input type="text" placeholder="Adicione uma nova tarefa" />
           <button type="submit">Criar</button>
         </form>
 
-        <div class="counter">
+        <section class="counter">
           <p>
             <strong>Tarefas criadas</strong>
             <span>3</span>
@@ -48,22 +48,22 @@
             <strong>Tarefas concluídas</strong>
             <span>4</span>
           </p>
-        </div>
+        </section>
 
-        <div class="empty_tasks">
+        <section class="empty_tasks">
           <img src="./assets/empty-tasks.svg" alt="" />
           <div>
             <p>Você ainda não tem tarefas cadastradas</p>
             <p>Crie tarefas e organize seus itens a fazer</p>
           </div>
-        </div>
+        </section>
 
-        <div class="tasks_list">
-          <div class="task">
+        <ul class="tasks_list">
+          <li class="task">
             <p>Dar banho nos gatos</p>
-          </div>
-        </div>
-      </div>
+          </li>
+        </ul>
+      </main>
     </div>
   </body>
 </html>
