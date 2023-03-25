@@ -1,32 +1,33 @@
 :root {
-  --gray-100: #fff;
-  --gray-200: #d9d9d9;
+  --white: #fff;
+  --gray-100: #d9d9d9;
   --gray-200: #808080;
   --gray-300: #707070;
   --gray-400: #363636;
   --gray-500: #222222;
-  --gray-700: #1a1a1a;
+  --black: #1a1a1a;
 
   --blue-500: #4E6EDE;
+  --blue-600: #3352C3;
   --green-500: #26C277;
   --yellow-500: #FFD231;
 }
 
-/* :focus {
+:focus {
   outline: transparent;
-} */
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  transition: all .3 ease-out;
+  transition: all .3s ease-out;
 }
 
 body {
   background: var(--gray-500);
-  color: var(--gray-100);
+  color: var(--white);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,7 +39,7 @@ button {
   font-size: 1rem;
 }
 
-/* input,
+input,
 button {
   border-radius: 8px;
   padding: 1rem;
@@ -47,7 +48,7 @@ button {
 input:hover,
 button:hover {
   cursor: pointer;
-} */
+}
 
 /* ------------------ WRAPPER BELOW ------------------- */
 
@@ -82,3 +83,49 @@ header {
 
   padding: calc(6.75rem - 2rem) 0;
 }
+
+/* ------------------ FORM BELOW ------------------- */
+
+.new_task_form {
+  display: flex;
+  gap: 16px;
+}
+
+.new_task_form input {
+  width: 100%;
+  height: 3.375rem;
+
+  background: var(--gray-400);
+  color: var(--gray-200);
+  border: 1px solid transparent;
+}
+
+.new_task_form input:hover {
+  border: 1px solid var(--blue-500);
+}
+
+.new_task_form button {
+  width: 6.625rem;
+  height: 3.25rem;
+
+  background: var(--blue-500);
+  color: var(--white);
+  border: 1px solid transparent;
+
+  display: flex;
+  align-items: center;
+}
+
+.new_task_form button:hover {
+  background: var(--blue-600);
+}
+
+.new_task_form button i {
+  font-size: 22px;
+  margin-left: 8px;
+}
+
+/* .new_task_form button:disabled {
+  background: var(--black);
+  color: var(--gray-200);
+} */
