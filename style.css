@@ -57,7 +57,7 @@ button:hover {
 .wrapper {
   max-width: 46rem;
   margin: 0 auto;
-  /* padding: 0 1rem 5rem 1rem; */
+  padding: 0 1rem 5rem 1rem;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -179,4 +179,24 @@ header {
 .done_tasks span {
   background: var(--green-500);
   color: var(--green-700);
+}
+
+/* ------------------ EMPTY TASKS BELOW ------------------- */
+
+.empty_tasks {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--gray-300);
+  font-size: 1.3rem;
+}
+
+.empty_tasks img {
+  margin-right: 32px;
+}
+
+.empty_tasks div p:first-child {
+  font-weight: bold;
 }
