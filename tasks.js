@@ -38,11 +38,27 @@ function createNewTaskEl(taskName, taskId) {
   todoIcon.classList.add("check_btn");
   todoIcon.addEventListener("click", completeTask);
 
+  // done icon
+  let doneIcon = document.createElement("i");
+  doneIcon.classList.add("ph-duotone");
+  doneIcon.classList.add("ph-check-circle");
+  doneIcon.classList.add("check_btn");
+  doneIcon.classList.add("hidden");
+  doneIcon.addEventListener("click", incompleteTask);
+
+  // task name / p
+  let name = document.createElement("p");
+  name.innerHTML = taskName;
 
   // delete icon
-}
+  let deleteIcon = document.createElement("i");
+  deleteIcon.classList.add("ph-duotone");
+  deleteIcon.classList.add("ph-trash");
+  deleteIcon.classList.add("delete_btn");
+  deleteIcon.addEventListener("click", deleteTask);
 
 createNewTaskEl('sdghasjda', 12541);
+}
 
 // add new task
 function addTask(event) {
