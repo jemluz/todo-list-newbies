@@ -19,6 +19,19 @@ const addTaskInput = document.getElementById("task_input");
 const addTaskButton = document.getElementsByTagName("button")[0];
 const taskList = document.getElementById("tasks_list");
 
+// create new task element
+function createNewTaskEl(taskName, taskId) {
+  // create task li
+
+  // create .left_content div
+    // todo icon
+    // done icon
+    // task name / p
+
+  // delete icon
+}
+
+
 // add new task
 function addTask(event) {
   event.preventDefault();
