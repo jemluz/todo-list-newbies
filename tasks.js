@@ -25,12 +25,19 @@ function createNewTaskEl(taskName, taskId) {
   let task = document.createElement("li");
   task.classList.add("task");
   task.classList.add("todo");
-  task.setAttribute("id", taskId)
+  task.setAttribute("id", taskId);
 
   // create .left_content div
-    // todo icon
-    // done icon
-    // task name / p
+  let leftContent = document.createElement("div");
+  leftContent.classList.add("left_content");
+
+  // todo icon
+  let todoIcon = document.createElement("i");
+  todoIcon.classList.add("ph-duotone");
+  todoIcon.classList.add("ph-circle-dashed");
+  todoIcon.classList.add("check_btn");
+  todoIcon.addEventListener("click", completeTask);
+
 
   // delete icon
 }
