@@ -22,6 +22,10 @@ const taskList = document.getElementById("tasks_list");
 // create new task element
 function createNewTaskEl(taskName, taskId) {
   // create task li
+  let task = document.createElement("li");
+  task.classList.add("task");
+  task.classList.add("todo");
+  task.setAttribute("id", taskId)
 
   // create .left_content div
     // todo icon
@@ -31,6 +35,7 @@ function createNewTaskEl(taskName, taskId) {
   // delete icon
 }
 
+createNewTaskEl('sdghasjda', 12541);
 
 // add new task
 function addTask(event) {
