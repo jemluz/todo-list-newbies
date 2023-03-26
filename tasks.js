@@ -83,6 +83,8 @@ function addTask(event) {
   taskData.push(newTask);
   const taskElement = createNewTaskEl(newTask.name, newTask.id);
   taskList.appendChild(taskElement);
+
+  addTaskInput.value = ''
 }
 
 // complete task
@@ -101,5 +103,15 @@ function deleteTask(event) {
 }
 
 // sync HTML with taskData list
+// for(let i = 0; i < taskData.length; i++) {
+//   const currentTask = taskData[i]
+//   const taskItem = createNewTaskEl(currentTask.name, currentTask.id);
+//   taskList.appendChild(taskItem);
+// }
+
+for(const task of taskData) {
+  const taskItem = createNewTaskEl(task.name, task.id);
+  taskList.appendChild(taskItem);
+}
 
 // counter tasks
