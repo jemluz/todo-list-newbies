@@ -107,8 +107,6 @@ function completeTask(event) {
     if (item.id === taskToCompletId) {
       item.toDo = false;
     }
-
-    return item.id === taskToCompletId
   })
 }
 
@@ -138,6 +136,18 @@ function incompleteTask(event) {
 // delete task
 function deleteTask(event) {
   console.log('Delete Task');
+
+  const taskToDeleteId = event.target.parentNode.id;
+  const taskToDelete = document.getElementById(taskToDeleteId);
+
+  const tasksWithoutDeletedOne = taskData.filter(
+    (task) => {
+      return task.id !== taskToDeleteId;
+    }
+  );
+
+  taskData = tasksWithoutDeletedOne;
+  taskList.removeChild(taskToDelete);
 }
 
 // sync HTML with taskData list
