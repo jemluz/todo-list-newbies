@@ -90,6 +90,18 @@ function addTask(event) {
 // complete task
 function completeTask(event) {
   console.log('Complete task');
+
+  const todoIcon = event.target;
+  todoIcon.classList.add("hidden");
+
+  const taskToCompletId = todoIcon.parentNode.parentNode.id;
+  const taskToComplete = document.getElementById(taskToCompletId);
+
+  taskToComplete.classList.add("done");
+  taskToComplete.classList.remove("todo");
+
+  const doneIcon = todoIcon.parentNode.childNodes[1];
+  doneIcon.classList.remove("hidden");
 }
 
 // incomplete task
