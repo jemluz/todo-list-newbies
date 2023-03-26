@@ -11,7 +11,7 @@ let taskData = [
   {
     id: uid(),
     name: 'Dar banho nos gatos',
-    toDo: false,
+    toDo: true,
   }
 ]
 
@@ -102,6 +102,14 @@ function completeTask(event) {
 
   const doneIcon = todoIcon.parentNode.childNodes[1];
   doneIcon.classList.remove("hidden");
+
+  taskData.find((item) => {
+    if (item.id === taskToCompletId) {
+      item.toDo = false;
+    }
+
+    return item.id === taskToCompletId
+  })
 }
 
 // incomplete task
