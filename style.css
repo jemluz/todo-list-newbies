@@ -1,32 +1,37 @@
 :root {
-  --gray-100: #fff;
-  --gray-200: #d9d9d9;
+  --white: #fff;
+  --gray-100: #d9d9d9;
   --gray-200: #808080;
   --gray-300: #707070;
+  --gray-350: #303030;
   --gray-400: #363636;
   --gray-500: #222222;
-  --gray-700: #1a1a1a;
+  --black: #1a1a1a;
 
   --blue-500: #4E6EDE;
+  --blue-600: #3352C3;
   --green-500: #26C277;
+  --green-700: #093d24;
   --yellow-500: #FFD231;
+  --yellow-700: #644f04;
+  --red-500: #DE4E4E;
 }
 
-/* :focus {
+:focus {
   outline: transparent;
-} */
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  transition: all .3 ease-out;
+  transition: all .3s ease-out;
 }
 
 body {
   background: var(--gray-500);
-  color: var(--gray-100);
+  color: var(--white);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -38,14 +43,238 @@ button {
   font-size: 1rem;
 }
 
-/* input,
+input,
 button {
   border-radius: 8px;
   padding: 1rem;
 }
 
 input:hover,
-button:hover {
+button:hover,
+i:hover {
   cursor: pointer;
+}
+
+/* ------------------ WRAPPER BELOW ------------------- */
+
+.wrapper {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1rem 5rem 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  /* align-items: center;
+  justify-content: center; */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  /* .wrapper {
+    grid-template-columns: 1fr;
+  } */
+}
+
+/* ------------------ HEADER BELOW ------------------- */
+
+header {
+  display: flex;
+  justify-content: center;
+
+  padding: calc(6.75rem - 2rem) 0;
+}
+
+/* ------------------ FORM BELOW ------------------- */
+
+.new_task_form {
+  display: flex;
+  gap: 16px;
+}
+
+.new_task_form input {
+  width: 100%;
+  height: 3.375rem;
+
+  background: var(--gray-400);
+  color: var(--gray-200);
+  border: 1px solid transparent;
+}
+
+.new_task_form input:hover {
+  border: 1px solid var(--blue-500);
+}
+
+.new_task_form button {
+  width: 6.625rem;
+  height: 3.25rem;
+
+  background: var(--blue-500);
+  color: var(--white);
+  border: 1px solid transparent;
+
+  display: flex;
+  align-items: center;
+}
+
+.new_task_form button:hover {
+  background: var(--blue-600);
+}
+
+.new_task_form button i {
+  font-size: 22px;
+  margin-left: 8px;
+}
+
+/* .new_task_form button:disabled {
+  background: var(--black);
+  color: var(--gray-200);
 } */
 
+/* ------------------ TASKS COUNTER BELOW ------------------- */
+
+.tasks_counter {
+  max-width: 46rem;
+  padding: 1.25rem;
+  margin: 48px auto;
+
+  border-top: 3px solid var(--gray-400);
+  border-bottom: 3px solid var(--gray-400);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasks_counter strong {
+  font-size: 0.875rem;
+}
+
+.tasks_counter span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-left: 8px;
+}
+
+.count {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ------------------ TASKS COUNTER COLORS BELOW ------------------- */
+
+.all_tasks {
+  color: var(--yellow-500);
+}
+
+.all_tasks span {
+  background: var(--yellow-500);
+  color: var(--yellow-700);
+}
+
+.done_tasks {
+  color: var(--green-500);
+}
+
+.done_tasks span {
+  background: var(--green-500);
+  color: var(--green-700);
+}
+
+/* ------------------ EMPTY TASKS BELOW ------------------- */
+
+.empty_tasks {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--gray-300);
+  font-size: 1.3rem;
+}
+
+.empty_tasks img {
+  margin-right: 32px;
+}
+
+.empty_tasks div p:first-child {
+  font-weight: bold;
+}
+
+/* ------------------ TASKS LIST BELOW ------------------- */
+.tasks_list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 46rem;
+}
+
+/* ------------------ TASK BELOW ------------------- */
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--gray-350);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.task+.task {
+  margin-top: 1rem;
+}
+
+.task div {
+  display: flex;
+  align-items: center;
+}
+
+.task div i  {
+  font-size: 28px;
+}
+
+.task div p {
+  margin: 0 16px;
+  color: var(white);
+}
+
+.task .delete_btn  {
+  font-size: 24px;
+  color: var(--gray-200);
+}
+
+.task .delete_btn:hover  {
+  color: var(--red-500);
+}
+
+/* ------------------ TODO TASK BELOW ------------------- */
+.todo .check_btn {
+  color: var(--gray-200);
+}
+
+.todo .check_btn:hover {
+  color: var(--green-500);
+}
+
+/* ------------------ DONE TASK BELOW ------------------- */
+.done div .risked {
+  text-decoration: line-through;
+  color: var(--gray-200);
+}
+
+.done .check_btn {
+  color: var(--green-500);
+}
+
+.done .check_btn:hover {
+  color: var(--yellow-500);
+}
+
+/* ------------------ HIDDEN BELOW ------------------- */
+.hidden {
+  display: none;
+}

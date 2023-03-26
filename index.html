@@ -19,11 +19,17 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Phosphor -->
-    <!-- <link
+    <link
       rel="stylesheet"
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/bold/style.css"
-    /> -->
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css"
+    />
   </head>
   <body>
     <div class="wrapper">
@@ -35,22 +41,28 @@
 
       <main>
         <form class="new_task_form">
-          <input type="text" placeholder="Adicione uma nova tarefa" />
-          <button type="submit">Criar</button>
+          <input
+            id="task_input"
+            type="text"
+            placeholder="Adicione uma nova tarefa"
+          />
+          <button type="submit" onclick="addTask(event)">
+            Criar <i class="ph-bold ph-plus-circle"></i>
+          </button>
         </form>
 
-        <section class="counter">
-          <p>
+        <section class="tasks_counter">
+          <div class="all_tasks">
             <strong>Tarefas criadas</strong>
-            <span>3</span>
-          </p>
-          <p>
+            <span id="todo_count" class="count">0</span>
+          </div>
+          <div class="done_tasks">
             <strong>Tarefas concluídas</strong>
-            <span>4</span>
-          </p>
+            <span id="done_count" class="count">0</span>
+          </div>
         </section>
 
-        <section class="empty_tasks">
+        <section id="empty_tasks" class="empty_tasks hidden">
           <img src="./assets/empty-tasks.svg" alt="" />
           <div>
             <p>Você ainda não tem tarefas cadastradas</p>
@@ -58,12 +70,10 @@
           </div>
         </section>
 
-        <ul class="tasks_list">
-          <li class="task">
-            <p>Dar banho nos gatos</p>
-          </li>
-        </ul>
+        <ul id="tasks_list" class="tasks_list"></ul>
       </main>
     </div>
+
+    <script src="tasks.js"></script>
   </body>
 </html>
